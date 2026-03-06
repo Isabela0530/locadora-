@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locadora de Filmes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>🎬 Locadora de Filmes</h1>
+
+<nav>
+<button onclick="mostrarHome()">Home</button>
+<button onclick="mostrarCadastro()">Cadastro de Filmes</button>
+</nav>
+
+</header>
+
+<main>
+
+<!-- HOME -->
+<section id="home">
+<h2>Bem-vindo à Locadora</h2>
+<p>Gerencie os filmes cadastrados no sistema.</p>
+</section>
+
+<!-- CADASTRO -->
+<section id="cadastro" style="display:none;">
+
+<div class="topo">
+
+<button onclick="abrirModal()">+ Novo Filme</button>
+
+<select id="filtroGenero" onchange="filtrarGenero()">
+<option value="">Todos os gêneros</option>
+<option>Ação</option>
+<option>Comédia</option>
+<option>Drama</option>
+<option>Terror</option>
+<option>Romance</option>
+<option>Ficção</option>
+</select>
+
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Capa</th>
+<th>Nome</th>
+<th>Gênero</th>
+<th>Ano</th>
+<th>Classificação</th>
+<th>Produtora</th>
+<th>Ações</th>
+</tr>
+</thead>
+
+<tbody id="dados"></tbody>
+
+</table>
+
+</section>
+
+</main>
+
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<h2>Novo Filme</h2>
+
+<input type="text" id="capa" placeholder="URL da capa">
+
+<input type="text" id="nome" placeholder="Nome do filme">
+
+<select id="genero">
+<option>Ação</option>
+<option>Comédia</option>
+<option>Drama</option>
+<option>Terror</option>
+<option>Romance</option>
+<option>Ficção</option>
+</select>
+
+<input type="number" id="ano" placeholder="Ano">
+
+<input type="text" id="classificacao" placeholder="Classificação">
+
+<input type="text" id="produtora" placeholder="Produtora">
+
+<div class="modal-buttons">
+<button onclick="salvarFilme()">Salvar</button>
+<button onclick="fecharModal()">Cancelar</button>
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
